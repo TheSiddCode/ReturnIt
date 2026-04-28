@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>TagBack — Smart Lost & Found Network</title>
+        <title>ReturnIt — Smart Lost & Found Network</title>
         <meta name="description" content="Never lose your valuables again. QR-powered lost & found for India." />
       </Head>
 
@@ -147,7 +147,7 @@ export default function Home() {
         </section>
 
         <footer className={styles.footer}>
-          <p>© 2024 TagBack. Made with ♥ in Indore, India.</p>
+          <p>© 2024 ReturnIt. Made with ♥ in Indore, India.</p>
         </footer>
       </main>
     </>

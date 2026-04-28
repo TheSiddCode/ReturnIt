@@ -57,8 +57,13 @@ export default function Dashboard() {
 
   return (
     <>
-      <Head><title>Dashboard — TagBack</title></Head>
+      {/* ✅ UPDATED TITLE */}
+      <Head>
+        <title>Dashboard — ReturnIt</title>
+      </Head>
+
       <Navbar />
+
       <div className={styles.page}>
         <div className={styles.aurora}>
           <div className={styles.blob} />
@@ -73,6 +78,7 @@ export default function Dashboard() {
               </h1>
               <p className={styles.greetSub}>Here are all your tagged items</p>
             </div>
+
             <Link href="/items/new" className={styles.btnNew}>
               <span>+</span> Register Item
             </Link>
@@ -100,11 +106,17 @@ export default function Dashboard() {
               <span className={styles.trustIcon}>⭐</span>
               <div>
                 <p className={styles.trustTitle}>Trust Score: {user?.trustScore || 0}</p>
-                <p className={styles.trustSub}>Return more items to increase your score and unlock badges</p>
+                <p className={styles.trustSub}>
+                  Return more items to increase your score and unlock badges
+                </p>
               </div>
             </div>
+
             <div className={styles.trustBar}>
-              <div className={styles.trustFill} style={{ width: `${Math.min((user?.trustScore || 0), 100)}%` }} />
+              <div
+                className={styles.trustFill}
+                style={{ width: `${Math.min((user?.trustScore || 0), 100)}%` }}
+              />
             </div>
           </div>
 
@@ -114,7 +126,9 @@ export default function Dashboard() {
               <div className={styles.emptyIcon}>🏷️</div>
               <h2>No items yet</h2>
               <p>Register your first item and get a QR tag to protect it</p>
-              <Link href="/items/new" className={styles.btnNew}>Register your first item</Link>
+              <Link href="/items/new" className={styles.btnNew}>
+                Register your first item
+              </Link>
             </div>
           ) : (
             <div className={styles.grid}>

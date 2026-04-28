@@ -30,7 +30,11 @@ export default function Login() {
 
   return (
     <>
-      <Head><title>Login — TagBack</title></Head>
+      {/* ✅ UPDATED TITLE */}
+      <Head>
+        <title>Login — ReturnIt</title>
+      </Head>
+
       <div className={styles.page}>
         <div className={styles.aurora}>
           <div className={styles.blob1} />
@@ -38,7 +42,11 @@ export default function Login() {
         </div>
 
         <div className={styles.card}>
-          <Link href="/" className={styles.logo}>⬡ TagBack</Link>
+          {/* ✅ UPDATED LOGO */}
+          <Link href="/" className={styles.logo}>
+            ⬡ ReturnIt
+          </Link>
+
           <h1 className={styles.title}>Welcome back</h1>
           <p className={styles.sub}>Sign in to manage your tagged items</p>
 
@@ -53,6 +61,7 @@ export default function Login() {
                 required
               />
             </div>
+
             <div className={styles.field}>
               <label>Password</label>
               <input
@@ -63,6 +72,7 @@ export default function Login() {
                 required
               />
             </div>
+
             <button type="submit" className={styles.btnSubmit} disabled={loading}>
               {loading ? <span className={styles.spinner} /> : 'Sign in'}
             </button>

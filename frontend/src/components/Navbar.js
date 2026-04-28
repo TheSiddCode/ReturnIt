@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
           <span className={styles.logoIcon}>⬡</span>
-          <span className={styles.logoText}>Tag<span>Back</span></span>
+          <span className={styles.logoText}>Return<span>It</span></span>
         </Link>
 
         <div className={styles.links}>

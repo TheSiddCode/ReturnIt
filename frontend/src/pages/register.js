@@ -22,7 +22,7 @@ export default function Register() {
     try {
       const { data } = await register(form);
       loginUser(data.user, data.token);
-      toast.success('Account created! Welcome to TagBack 🎉');
+      toast.success('Account created! Welcome to ReturnIt 🎉'); // ✅ updated
       router.push('/dashboard');
     } catch (err) {
       toast.error(err.response?.data?.error || 'Registration failed');
@@ -33,7 +33,11 @@ export default function Register() {
 
   return (
     <>
-      <Head><title>Create Account — TagBack</title></Head>
+      {/* ✅ UPDATED TITLE */}
+      <Head>
+        <title>Create Account — ReturnIt</title>
+      </Head>
+
       <div className={styles.page}>
         <div className={styles.aurora}>
           <div className={styles.blob1} />
@@ -41,7 +45,11 @@ export default function Register() {
         </div>
 
         <div className={styles.card}>
-          <Link href="/" className={styles.logo}>⬡ TagBack</Link>
+          {/* ✅ UPDATED LOGO */}
+          <Link href="/" className={styles.logo}>
+            ⬡ ReturnIt
+          </Link>
+
           <h1 className={styles.title}>Create your account</h1>
           <p className={styles.sub}>Free forever for up to 3 items</p>
 
@@ -55,6 +63,7 @@ export default function Register() {
                 required
               />
             </div>
+
             <div className={styles.field}>
               <label>Email address</label>
               <input
@@ -65,6 +74,7 @@ export default function Register() {
                 required
               />
             </div>
+
             <div className={styles.row2}>
               <div className={styles.field}>
                 <label>Phone number</label>
@@ -77,6 +87,7 @@ export default function Register() {
                   required
                 />
               </div>
+
               <div className={styles.field}>
                 <label>City</label>
                 <select value={form.city} onChange={e => setForm({ ...form, city: e.target.value })}>
@@ -84,6 +95,7 @@ export default function Register() {
                 </select>
               </div>
             </div>
+
             <div className={styles.field}>
               <label>Password</label>
               <input
@@ -95,6 +107,7 @@ export default function Register() {
                 required
               />
             </div>
+
             <button type="submit" className={styles.btnSubmit} disabled={loading}>
               {loading ? <span className={styles.spinner} /> : 'Create free account'}
             </button>
