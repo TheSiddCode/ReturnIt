@@ -13,10 +13,15 @@ const app = express();
 
 connectDB();
 
+// ✅ FINAL CORS FIX
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: [
+    "http://localhost:3000",
+    "https://return-it-one.vercel.app"
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 
 app.get('/', (req, res) => res.json({ message: 'TagBack API running' }));
